@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Scratch Lab</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <div id="pageContainer">
+      <div id="outputPane">
+        <pre id="generatedCode"><code></code></pre>
+        <div id="actions">
+          <button id="downloadButton" onclick="downloadCode()">Download code</button>
+        </div>
+      </div>
+      <div id="blocklyDiv"></div>
+    </div>
+    <script>
+      const downloadCode = () => {
+        const codeDiv = document.getElementById('generatedCode')?.firstChild;
+        const code = codeDiv?.textContent;
+        if (!code) {
+          return alert('No code to download!');
+        }
+        const fileName = window.prompt('Enter name of your plugin', 'plugin');
+        if (!fileName) {
+          return;
+        }
+        const blob = new Blob([code], { type: 'text/plain' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = fileName.toLocaleLowerCase().replace(/ /g, '_') + '.lua';
+        a.click();
+        URL.revokeObjectURL(url);
+      };
+    </script>
+  </body>
+</html>
