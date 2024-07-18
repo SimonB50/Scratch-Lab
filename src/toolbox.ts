@@ -1,3 +1,5 @@
+import { inputs } from "blockly";
+
 // Define the toolbox for the blockly editor
 export const toolbox = {
   kind: "categoryToolbox",
@@ -1167,6 +1169,57 @@ export const toolbox = {
             AMMO_TYPE: {
               shadow: {
                 type: "item_type",
+              },
+            },
+          },
+        },
+      ],
+    },
+    {
+      kind: "category",
+      name: "Server",
+      categorystyle: "server_category",
+      contents: [
+        // Values
+        {
+          kind: "block",
+          type: "get_server_address",
+        },
+        {
+          kind: "block",
+          type: "get_server_port",
+        },
+        {
+          kind: "block",
+          type: "get_server_players",
+        },
+        {
+          kind: "block",
+          type: "get_server_slots",
+        },
+        {
+          kind: "block",
+          type: "get_server_reserved_slots",
+        },
+        {
+          kind: "block",
+          type: "get_server_tps",
+        },
+        {
+          kind: "block",
+          type: "get_server_friendly_fire",
+        },
+        // Actions
+        {
+          kind: "block",
+          type: "set_server_friendly_fire",
+          inputs: {
+            VALUE: {
+              shadow: {
+                type: "logic_boolean",
+                fields: {
+                  BOOL: "TRUE",
+                },
               },
             },
           },
