@@ -1227,6 +1227,41 @@ export const toolbox = {
       ],
     },
     {
+      kind: "category",
+      name: "Utils",
+      categorystyle: "misc_category",
+      contents: [
+        {
+          kind: "block",
+          type: "misc_print",
+          inputs: {
+            TEXT: {
+              shadow: {
+                type: "text",
+                fields: {
+                  TEXT: "Hello, world!",
+                },
+              },
+            },
+          },
+        },
+        {
+          kind: "block",
+          type: "misc_call_delayed",
+          inputs: {
+            DELAY: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 0.1,
+                },
+              },
+            },
+          },
+        },
+      ],
+    },
+    {
       kind: "sep",
     },
     {

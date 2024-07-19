@@ -14,6 +14,7 @@ import {blocks as enumBlocks} from './blocks/enums';
 import {blocks as playerBlocks} from './blocks/players';
 import {blocks as itemBlocks} from './blocks/items';
 import {blocks as serverBlocks} from './blocks/server'
+import {blocks as miscBlocks} from './blocks/misc';
 
 // Import generators
 import {forBlock as forEventBlocks} from './generators/events';
@@ -21,6 +22,7 @@ import {forBlock as forEnumBlocks} from './generators/enums';
 import {forBlock as forPlayerBlocks} from './generators/players';
 import {forBlock as forItemBlocks} from './generators/items';
 import {forBlock as forServerBlocks} from './generators/server';
+import {forBlock as forMiscBlocks} from './generators/misc';
 
 // Register the blocks and generator with Blockly
 textMultiline.installBlock({ lua: luaGenerator });
@@ -29,6 +31,7 @@ Blockly.common.defineBlocks(enumBlocks);
 Blockly.common.defineBlocks(playerBlocks);
 Blockly.common.defineBlocks(itemBlocks);
 Blockly.common.defineBlocks(serverBlocks);
+Blockly.common.defineBlocks(miscBlocks);
 
 // Register custom lua generators
 Object.assign(luaGenerator.forBlock, forEventBlocks);
@@ -36,6 +39,7 @@ Object.assign(luaGenerator.forBlock, forEnumBlocks);
 Object.assign(luaGenerator.forBlock, forPlayerBlocks);
 Object.assign(luaGenerator.forBlock, forItemBlocks);
 Object.assign(luaGenerator.forBlock, forServerBlocks);
+Object.assign(luaGenerator.forBlock, forMiscBlocks);
 
 // Set up UI elements and inject Blockly
 const codeDiv = document.getElementById('generatedCode')?.firstChild;

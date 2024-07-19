@@ -1,6 +1,6 @@
 {
   "name": "scratch_lab",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "App to create plugins for SCP:SL using Blockly blocks",
   "main": "index.js",
   "private": true,
