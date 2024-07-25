@@ -391,7 +391,7 @@ const setPlayerMute = {
       type: "input_value",
       name: "MUTED",
       check: "Boolean",
-    }
+    },
   ],
   previousStatement: null,
   nextStatement: null,
@@ -411,7 +411,7 @@ const setPlayerIntercomMute = {
       type: "input_value",
       name: "MUTED",
       check: "Boolean",
-    }
+    },
   ],
   previousStatement: null,
   nextStatement: null,
@@ -433,7 +433,7 @@ const setPlayerDisarmed = {
       type: "input_value",
       name: "DISARMED",
       check: "Boolean",
-    }
+    },
   ],
   previousStatement: null,
   nextStatement: null,

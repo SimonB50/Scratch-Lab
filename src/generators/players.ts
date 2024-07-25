@@ -43,7 +43,7 @@ forBlock["get_player_role"] = function (
 ) {
   const player = generator.valueToCode(block, "PLAYER", Order.NONE) || "''";
   return [`${player}.PlayerRole.RoleType`, Order.NONE];
-}
+};
 forBlock["get_player_username"] = function (
   block: Blockly.Block,
   generator: Blockly.CodeGenerator
@@ -127,14 +127,14 @@ forBlock["get_player_disarmed"] = function (
 ) {
   const player = generator.valueToCode(block, "PLAYER", Order.NONE) || "''";
   return [`${player}.IsDisarmed`, Order.NONE];
-}
+};
 forBlock["get_player_alive"] = function (
   block: Blockly.Block,
   generator: Blockly.CodeGenerator
 ) {
   const player = generator.valueToCode(block, "PLAYER", Order.NONE);
   return [`${player}.IsAlive`, Order.NONE];
-}
+};
 
 // Actions
 forBlock["set_player_role"] = function (
@@ -208,14 +208,14 @@ forBlock["set_player_disarmed"] = function (
   const player = generator.valueToCode(block, "PLAYER", Order.NONE) || "''";
   const disarmed = generator.valueToCode(block, "DISARMED", Order.NONE);
   return `${player}.IsDisarmed = ${disarmed};\n`;
-}
+};
 forBlock["player_kill"] = function (
   block: Blockly.Block,
   generator: Blockly.CodeGenerator
 ) {
   const player = generator.valueToCode(block, "PLAYER", Order.NONE);
   return `${player}.IsAlive = false;\n`;
-}
+};
 forBlock["broadcast_message"] = function (
   block: Blockly.Block,
   generator: Blockly.CodeGenerator
@@ -225,7 +225,7 @@ forBlock["broadcast_message"] = function (
   const duration = generator.valueToCode(block, "DURATION", Order.NONE);
   const clear = generator.valueToCode(block, "CLEAR", Order.NONE);
   return `${player}.Broadcast(${message}, ${duration}, ${clear});\n`;
-}
+};
 forBlock["send_hint"] = function (
   block: Blockly.Block,
   generator: Blockly.CodeGenerator
@@ -234,4 +234,4 @@ forBlock["send_hint"] = function (
   const player = generator.valueToCode(block, "PLAYER", Order.NONE) || "''";
   const duration = generator.valueToCode(block, "DURATION", Order.NONE);
   return `${player}.Hint(${message}, ${duration});\n`;
-}
+};

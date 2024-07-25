@@ -642,11 +642,23 @@ export const toolbox = {
         },
         {
           kind: "block",
+          type: "event_player_activate_generator",
+        },
+        {
+          kind: "block",
           type: "event_player_banned",
         },
         {
           kind: "block",
+          type: "event_player_cancel_using_item",
+        },
+        {
+          kind: "block",
           type: "event_player_change_item",
+        },
+        {
+          kind: "block",
+          type: "event_player_change_radio_range",
         },
         {
           kind: "block",
@@ -682,6 +694,14 @@ export const toolbox = {
         },
         {
           kind: "block",
+          type: "event_player_used_item",
+        },
+        {
+          kind: "block",
+          type: "event_player_use_item",
+        },
+        {
+          kind: "block",
           type: "event_round_end",
         },
         {
@@ -695,6 +715,14 @@ export const toolbox = {
         {
           kind: "block",
           type: "event_waiting_for_players",
+        },
+        {
+          kind: "block",
+          type: "event_team_respawn_select",
+        },
+        {
+          kind: "block",
+          type: "event_team_spawn",
         },
       ],
     },
@@ -1223,6 +1251,152 @@ export const toolbox = {
               },
             },
           },
+        },
+      ],
+    },
+    {
+      kind: "category",
+      name: "Cassie",
+      categorystyle: "cassie_category",
+      contents: [
+        // Values
+        {
+          kind: "block",
+          type: "is_cassie_speaking",
+        },
+        {
+          kind: "block",
+          type: "cassie_message_duration",
+          inputs: {
+            CONTENT: {
+              shadow: {
+                type: "text",
+                fields: {
+                  TEXT: "Hello, world!",
+                },
+              },
+            },
+          },
+        },
+        {
+          kind: "block",
+          type: "convert_team_to_cassie",
+          inputs: {
+            TEAM: {
+              shadow: {
+                type: "team",
+              },
+            },
+            UNIT_NAME: {
+              shadow: {
+                type: "text",
+                fields: {
+                  TEXT: "Unit name",
+                },
+              },
+            },
+          },
+        },
+        {
+          kind: "block",
+          type: "convert_number_to_cassie",
+          inputs: {
+            NUMBER: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 1,
+                },
+              },
+            },
+          },
+        },
+        {
+          kind: "block",
+          type: "validate_cassie_word",
+          inputs: {
+            WORD: {
+              shadow: {
+                type: "text",
+                fields: {
+                  TEXT: "Word",
+                },
+              },
+            },
+          },
+        },
+        // Actions
+        {
+          kind: "block",
+          type: "send_cassie_message",
+          inputs: {
+            CONTENT: {
+              shadow: {
+                type: "text",
+                fields: {
+                  TEXT: "Hello, world!",
+                },
+              },
+            },
+            HELD: {
+              shadow: {
+                type: "logic_boolean",
+                fields: {
+                  BOOL: "TRUE",
+                },
+              },
+            },
+            NOISE: {
+              shadow: {
+                type: "logic_boolean",
+                fields: {
+                  BOOL: "TRUE",
+                },
+              },
+            },
+            SUBTITLES: {
+              shadow: {
+                type: "logic_boolean",
+                fields: {
+                  BOOL: "TRUE",
+                },
+              },
+            },
+          },
+        },
+        {
+          kind: "block",
+          type: "send_glitchy_cassie_message",
+          inputs: {
+            CONTENT: {
+              shadow: {
+                type: "text",
+                fields: {
+                  TEXT: "Hello, world!",
+                },
+              },
+            },
+            GLITCH_CHANCE: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 0.5,
+                },
+              },
+            },
+            JAM_CHANCE: {
+              shadow: {
+                type: "math_number",
+                fields: {
+                  NUM: 0.5,
+                },
+              },
+            },
+          },
+        },
+        {
+          kind: "block",
+          type: "clear_cassie",
         },
       ],
     },

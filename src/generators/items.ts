@@ -54,35 +54,35 @@ forBlock["get_item_type"] = function (
 ) {
   const item = generator.valueToCode(block, "ITEM", Order.NONE) || "''";
   return [`${item}.ItemType`, Order.NONE];
-}
+};
 forBlock["get_item_category"] = function (
   block: Blockly.Block,
   generator: Blockly.CodeGenerator
 ) {
   const item = generator.valueToCode(block, "ITEM", Order.NONE) || "''";
   return [`${item}.ItemCategory`, Order.NONE];
-}
+};
 forBlock["get_item_serial"] = function (
   block: Blockly.Block,
   generator: Blockly.CodeGenerator
 ) {
   const item = generator.valueToCode(block, "ITEM", Order.NONE) || "''";
   return [`${item}.Serial`, Order.NONE];
-}
+};
 forBlock["get_item_weight"] = function (
   block: Blockly.Block,
   generator: Blockly.CodeGenerator
 ) {
   const item = generator.valueToCode(block, "ITEM", Order.NONE) || "''";
   return [`${item}.Weight`, Order.NONE];
-}
+};
 forBlock["get_item_owner"] = function (
   block: Blockly.Block,
   generator: Blockly.CodeGenerator
 ) {
   const item = generator.valueToCode(block, "ITEM", Order.NONE) || "''";
   return [`${item}.Owner`, Order.NONE];
-}
+};
 
 // Actions
 forBlock["give_item"] = function (
@@ -124,7 +124,7 @@ forBlock["drop_item"] = function (
   const item = generator.valueToCode(block, "ITEM", Order.NONE) || "''";
   const player = generator.valueToCode(block, "PLAYER", Order.NONE) || "''";
   return `${player}.Inventory.DropItem(${item})\n`;
-}
+};
 forBlock["give_ammo"] = function (
   block: Blockly.Block,
   generator: Blockly.CodeGenerator
@@ -133,7 +133,7 @@ forBlock["give_ammo"] = function (
   const player = generator.valueToCode(block, "PLAYER", Order.NONE) || "''";
   const amount = generator.valueToCode(block, "AMOUNT", Order.NONE) || 0;
   return `${player}.Inventory.GiveAmmo(${item}, ${amount})\n`;
-}
+};
 forBlock["set_ammo"] = function (
   block: Blockly.Block,
   generator: Blockly.CodeGenerator
@@ -142,7 +142,7 @@ forBlock["set_ammo"] = function (
   const player = generator.valueToCode(block, "PLAYER", Order.NONE) || "''";
   const amount = generator.valueToCode(block, "AMOUNT", Order.NONE) || 0;
   return `${player}.Inventory.SetAmmo(${item}, ${amount})\n`;
-}
+};
 forBlock["drop_ammo"] = function (
   block: Blockly.Block,
   generator: Blockly.CodeGenerator
@@ -151,4 +151,4 @@ forBlock["drop_ammo"] = function (
   const player = generator.valueToCode(block, "PLAYER", Order.NONE) || "''";
   const amount = generator.valueToCode(block, "AMOUNT", Order.NONE) || 0;
   return `${player}.Inventory.DropAmmo(${item}, ${amount})\n`;
-}
+};

@@ -102,6 +102,18 @@ forBlock["event_generator_activated"] = function (
   statements += generator.statementToCode(block, "DO");
   return `Events.GeneratorActivated.add(function(args)\n${statements}end)\n`;
 }
+forBlock["event_player_activate_generator"] = function (
+  block: Blockly.Block,
+  generator: Blockly.CodeGenerator
+) {
+  const player = generator.getVariableName(block.getFieldValue('PLAYER'));
+  const gameGenerator = generator.getVariableName(block.getFieldValue('GENERATOR'));
+  let statements = "";
+  statements += `  local ${player} = args.Player;\n`;
+  statements += `  local ${gameGenerator} = args.Generator;\n`;
+  statements += generator.statementToCode(block, "DO");
+  return `Events.PlayerActivateGenerator.add(function(args)\n${statements}end)\n`;
+}
 forBlock["event_player_banned"] = function (
   block: Blockly.Block,
   generator: Blockly.CodeGenerator
@@ -118,6 +130,18 @@ forBlock["event_player_banned"] = function (
   statements += generator.statementToCode(block, "DO");
   return `Events.PlayerBanned.add(function(args)\n${statements}end)\n`;
 }
+forBlock["event_player_cancel_using_item"] = function (
+  block: Blockly.Block,
+  generator: Blockly.CodeGenerator
+) {
+  const player = generator.getVariableName(block.getFieldValue('PLAYER'));
+  const item = generator.getVariableName(block.getFieldValue('ITEM'));
+  let statements = "";
+  statements += `  local ${player} = args.Player;\n`;
+  statements += `  local ${item} = args.Item;\n`;
+  statements += generator.statementToCode(block, "DO");
+  return `Events.PlayerCancelUsingItem.add(function(args)\n${statements}end)\n`;
+}
 forBlock["event_player_change_item"] = function (
   block: Blockly.Block,
   generator: Blockly.CodeGenerator
@@ -131,6 +155,20 @@ forBlock["event_player_change_item"] = function (
   statements += `  local ${newItem} = args.NewItem;\n`;
   statements += generator.statementToCode(block, "DO");
   return `Events.PlayerChangeItem.add(function(args)\n${statements}end)\n`;
+}
+forBlock["event_player_change_radio_range"] = function (
+  block: Blockly.Block,
+  generator: Blockly.CodeGenerator
+) {
+  const player = generator.getVariableName(block.getFieldValue('PLAYER'));
+  const radio = generator.getVariableName(block.getFieldValue('RADIO'));
+  const range = generator.getVariableName(block.getFieldValue('RANGE'));
+  let statements = "";
+  statements += `  local ${player} = args.Player;\n`;
+  statements += `  local ${radio} = args.Radio;\n`;
+  statements += `  local ${range} = args.Range;\n`;
+  statements += generator.statementToCode(block, "DO");
+  return `Events.PlayerChangeRadioRange.add(function(args)\n${statements}end)\n`;
 }
 forBlock["event_player_change_spectator"] = function (
   block: Blockly.Block,
@@ -238,6 +276,30 @@ forBlock["event_player_spawn"] = function (
   statements += generator.statementToCode(block, "DO");
   return `Events.PlayerSpawn.add(function(args)\n${statements}end)\n`;
 }
+forBlock["event_player_used_item"] = function (
+  block: Blockly.Block,
+  generator: Blockly.CodeGenerator
+) {
+  const player = generator.getVariableName(block.getFieldValue('PLAYER'));
+  const item = generator.getVariableName(block.getFieldValue('ITEM'));
+  let statements = "";
+  statements += `  local ${player} = args.Player;\n`;
+  statements += `  local ${item} = args.Item;\n`;
+  statements += generator.statementToCode(block, "DO");
+  return `Events.PlayerUsedItem.add(function(args)\n${statements}end)\n`;
+}
+forBlock["event_player_use_item"] = function (
+  block: Blockly.Block,
+  generator: Blockly.CodeGenerator
+) {
+  const player = generator.getVariableName(block.getFieldValue('PLAYER'));
+  const item = generator.getVariableName(block.getFieldValue('ITEM'));
+  let statements = "";
+  statements += `  local ${player} = args.Player;\n`;
+  statements += `  local ${item} = args.Item;\n`;
+  statements += generator.statementToCode(block, "DO");
+  return `Events.PlayerUseItem.add(function(args)\n${statements}end)\n`;
+}
 forBlock["event_round_end"] = function (
   block: Blockly.Block,
   generator: Blockly.CodeGenerator
@@ -271,6 +333,30 @@ forBlock["event_waiting_for_players"] = function (
   let statements = "";
   statements += generator.statementToCode(block, "DO");
   return `Events.WaitingForPlayers.add(function()\n${statements}end)\n`;
+}
+forBlock["event_team_respawn_select"] = function (
+  block: Blockly.Block,
+  generator: Blockly.CodeGenerator
+) {
+  const team = generator.getVariableName(block.getFieldValue('TEAM'));
+  let statements = "";
+  statements += `  local ${team} = args.Team;\n`;
+  statements += generator.statementToCode(block, "DO");
+  return `Events.TeamRespawnSelected.add(function(args)\n${statements}end)\n`;
+}
+forBlock["event_team_spawn"] = function (
+  block: Blockly.Block,
+  generator: Blockly.CodeGenerator
+) {
+  const team = generator.getVariableName(block.getFieldValue('TEAM'));
+  const players = generator.getVariableName(block.getFieldValue('PLAYERS'));
+  const maxSize = generator.getVariableName(block.getFieldValue('NEXT_MAX_SIZE'));
+  let statements = "";
+  statements += `  local ${team} = args.Team;\n`;
+  statements += `  local ${players} = args.Players;\n`;
+  statements += `  local ${maxSize} = args.NextWaveMaxSize;\n`;
+  statements += generator.statementToCode(block, "DO");
+  return `Events.TeamRespawn.add(function(args)\n${statements}end)\n`;
 }
 
 // Event tools
