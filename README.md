@@ -2,13 +2,13 @@
 > This project is curently more like a demo that a fully working project. Only small part of features is implemented and everything is topic for changes.
 
 # Scratch Lab
-This project allows to easily create plguins for SCP: Secret Laboratory game servers by just connecting [Blockly](https://developers.google.com/blockly) blocks - just like in Scratch!
+This project allows to easily create plugins for SCP: Secret Laboratory game servers by just connecting [Blockly](https://developers.google.com/blockly) blocks - just like in Scratch!
 Everything is powered by [LuaLab Plugin](https://github.com/davidsebesta1/LuaLabPlugin) which allows to execude generated Lua code.
 
 ## Usage
 To start using **Scratch Lab** you just need to:
 1. [Install LuaLab plugin](https://github.com/davidsebesta1/LuaLabPlugin/blob/master/Guides/Installation.md)
-2. Go to https://scpsl.simonb50.xyz/
+2. Go to https://scpsl.simonb50.xyz/ (Secondary URL: https://scratch-lab.pages.dev/)
 3. Create your desired project using available blocks
 4. Click `Download code` button
 5. Enter your project name
